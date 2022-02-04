@@ -1,0 +1,14 @@
+a{
+   color: black;
+   /* text-decoration: none; */
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+p{
+font-size: small;
+}
+.date{
+    color: rgb(75, 75, 75);
+}

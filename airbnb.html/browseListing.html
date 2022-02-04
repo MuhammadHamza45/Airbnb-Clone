@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- fontawesome -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+ 
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="/Airbnb-Clone/airbnb.css/browseListingStyle.css">
+    <link rel="stylesheet" href="/Airbnb-Clone/airbnb.css/homeStyle.css">
+
+    <!-- Title -->
+    <link rel="icon" type="image/x-icon" href="/Airbnb-Clone/airbnb.image/airbnb.favicon.icon.png">
+    <title>Airbnb/Anywhere</title>
+</head>
+
+<body>
+    <!-- <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+                <strong>Album</strong>
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div> -->
+    <!-- =================== -->
+
+  <!-- navbar -->
+  <div class="container-fluid navbar-container">
+    <div class="row">
+      <div class="icon-col col-4">
+        <a class=" brand-icon" href="">
+          <i class="fab fa-airbnb"> Airbnb</i>
+        </a>
+      </div>
+      <div class="search-col col-4">
+        <div class="search-bar">
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Start Your Search" aria-label="Search">
+            <button class="search-btn btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="icon-col col-4">
+
+
+        <a style="color: black; text-decoration: none;" href="#"><b>Become a Host</b></a>
+
+        <a style="color: black; text-decoration: none; padding: 0 10px;" href="#">
+          <i class="fas fa-globe"></i>
+        </a>
+
+        <button class="login-button">
+          <i class="fas fa-bars"></i>
+          <img class="login-img" src="https://a0.muscache.com/defaults/user_pic-50x50.png?v=3">
+        </button>
+      </div>
+    </div>
+  </div>
+<hr>
+ <!-- cards -->
+    <div class="album py-5 bg-light">
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- 1ui  -->
+                <div class="col-md-3">
+                    <div class="card mb-4 box-shadow ">
+                        <a href="/Airbnb-Clone/airbnb.html/locationDetail.html"> <img class="card-img-top"
+                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+                                src="/Airbnb-Clone/airbnb.image/1ui.jpeg" data-holder-rendered="true">
+                        </a>
+                        <div class="card-body d-flex justify-content-between p-2 mt-2">
+                            <div class="text-start">
+                                <a href="">
+                                    <h6 class="card-text">Jibhi, Himachal Pradesh</h6>
+                                    <p>456 Kilometers away</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href=""><span>$91/night</span>
+                                    <p class="date">March 11-18</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of 1ui  -->
+
+                <!-- 2ui  -->
+                <div class="col-md-3">
+                    <div class="card mb-4 box-shadow">
+                        <a href=""> <img class="card-img-top"
+                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+                                src="/Airbnb-Clone/airbnb.image/2ui.jpg" data-holder-rendered="true"></a>
+                        <div class="card-body d-flex justify-content-between p-2 mt-2">
+                            <div class="text-start">
+                                <a href="">
+                                    <h6 class="card-text">Arakapas, Limassol</h6>
+                                    <p>3,658 Kilometers away</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href=""><span>$47 / night</span>
+                                    <p class="date">Feb 28 - Mar 7</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of 2ui  -->
+
+                <!-- 3ui  -->
+                <div class="col-md-3">
+                    <div class="card mb-4 box-shadow">
+                        <a href=""> <img class="card-img-top"
+                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+                                src="/Airbnb-Clone/airbnb.image/3.jpg" data-holder-rendered="true"></a>
+                        </a>
+                        <div class="card-body d-flex justify-content-between p-2 mt-2">
+                            <div class="text-start">
+                                <a href="">
+                                    <h6 class="card-text">Bodhrum, Mugla</h6>
+                                    <p>4,128 Kilometers away</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href=""><span>$27 / night</span>
+                                    <p class="date">Feburary 4 - 11</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of 3ui  -->
+
+                <!-- 4th ui  -->
+                <div class="col-md-3">
+                    <div class="card mb-4 box-shadow">
+                        <a href=""> <img class="card-img-top"
+                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+                                src="/Airbnb-Clone/airbnb.image/4.jpg" data-holder-rendered="true"></a>
+                        <div class="card-body d-flex justify-content-between p-2 mt-2">
+                            <div class="text-start">
+                                <a href="">
+                                    <h6 class="card-text">Zlatibor, Serbia</h6>
+                                    <p>4,691 Kilometers away</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href=""><span>$56 / night</span>
+                                    <p class="date">March 11-18</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of 4th ui -->
+            </div>
+        </div>
+    </div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section
+      class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+    >
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Company name
+            </h6>
+            <p>
+              Here you can use rows and columns to organize your footer content. Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Products
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Angular</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">React</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Vue</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Laravel</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Pricing</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Settings</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Orders</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Contact
+            </h6>
+            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              info@example.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
