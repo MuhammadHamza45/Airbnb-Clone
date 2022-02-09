@@ -4,6 +4,13 @@ body {
 }
 
 /* navbar */
+.form-style {
+  background-color: #ff385c;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  padding: 20px;
+}
 
 .navbar-container {
   background-color: white;
@@ -90,7 +97,7 @@ body {
 
 .flexible-container {
   height: 800px;
-  background-image: url("/Airbnb Clone/Airbnb-Clone/airbnb.image/flexible-img.jpg");
+  background-image: url("/airbnb.image/flexible-img.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;

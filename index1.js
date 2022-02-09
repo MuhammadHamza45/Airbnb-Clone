@@ -40,9 +40,7 @@ function getData() {
         }
 
         document.getElementById("test").innerHTML = outPut;
-        // document.getElementById("popular-row").innerHTML=outPut;
-        // document.getElementById("randon-row").innerHTML=outPut;
-        // document.getElementById("ingredient-row").innerHTML=outPut;
+ 
 
     }
 
