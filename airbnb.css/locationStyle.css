@@ -1,0 +1,65 @@
+a {
+  color: black;
+  /* text-decoration: none; */
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+p {
+  font-size: small;
+}
+.date {
+  color: rgb(0, 0, 0);
+}
+
+.form-content .form-items {
+  margin: 5px;
+  /* width: 90%; */
+  border: 2px solid rgb(255, 42, 141);
+  background-color: rgb(255, 255, 255);
+  padding: 40px;
+  display: inline-block;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 25px;
+  text-align: left;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.form-content p {
+  color: rgb(0, 0, 0);
+  text-align: left;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+.form-content select {
+  width: 100%;
+  padding: 9px 20px;
+  text-align: left;
+  border: 0;
+  outline: 0;
+  border-radius: 6px;
+  /* background-color: rgb(2, 1, 1); */
+  font-size: 15px;
+  font-weight: 300;
+  color: #110f0f;
+}
+
+.btn-color {
+  color: rgb(0, 0, 0);
+  background-color: rgb(238, 62, 91);
+  
+}
+.btn-color:hover {
+  background-color: rgb(238, 62, 91);
+  color: #ffffff;
+}
+.find{
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+}
+

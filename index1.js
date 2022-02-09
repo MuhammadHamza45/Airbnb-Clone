@@ -11,30 +11,31 @@ function getData() {
         var outPut = '';
         for (let i in datax) {
             outPut += `
+             
             <div class="col-md-3">
             <div class="card mb-4 box-shadow ">
-                <a href="/Airbnb Clone/Airbnb-Clone/airbnb.html/locationDetail.html"> <img class="card-img-top"
+                <a href="/airbnb.html/locationDetail.html"> <img class="card-img-top"
                         data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
                         alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
                         src="${datax[i].location_image}" data-holder-rendered="true">
                 </a>
                 <div class="card-body d-flex justify-content-between p-2 mt-2">
                     <div class="text-start">
-                        <a href="">
+                        <a href="/airbnb.html/locationDetail.html">
                             <h6 class="card-text">${datax[i].location}</h6>
                             <p>${datax[i].name}</p>
                         </a>
                     </div>
                     <div>
-                        <a href=""><span>$${datax[i].rent_per_night}/night</span>
+                        <a href="/airbnb.html/locationDetail.html"><span>$${datax[i].rent_per_night}/night</span>
                             <p class="date">${datax[i].cell_number}</p>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-            
-
+         
+ 
    
     `
         }
