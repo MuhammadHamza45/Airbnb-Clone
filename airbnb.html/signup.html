@@ -56,12 +56,13 @@
 <hr>
 <!-- sign up form -->
     <div class="container form-style">
-    <form class="row g-3">
+      
+    <form class="row g-3 " action="http://localhost:3000/signup" method="post">
         <h1 style="color: beige; text-align: center; font-weight: bolder;">Sign Up</h1>
         <hr>
         <div class="col-md-6">
             <label for="validationName" class="form-label">Name</label>
-            <input type="text" class="form-control is-invalid" id="validationName" placeholder="Full Name" aria-describedby="validationNameFeedback" required>
+            <input type="text" name="name" class="form-control is-invalid" id="validationName" placeholder="Full Name" aria-describedby="validationNameFeedback" required>
             <div id="validationNameFeedback" class="invalid-feedback" style="color: aliceblue;">
                 Please provide a valid Name.
               </div>
@@ -69,35 +70,35 @@
         </div>
         <div class="col-md-6">
             <label for="validationEmail" class="form-label">Email</label>
-            <input type="email" class="form-control is-invalid" id="validationEmail" placeholder="Enter Email" aria-describedby="validationEmailFeedback" required>
+            <input type="email" name="email" class="form-control is-invalid" id="validationEmail" placeholder="Enter Email" aria-describedby="validationEmailFeedback" required>
             <div id="validationEmailFeedback" class="invalid-feedback" style="color: aliceblue;">
                 Please provide a valid Email.
               </div>
         </div>
         <div class="col-md-6">
             <label for="validationCountry" class="form-label">Country</label>
-            <input type="text" class="form-control is-invalid" id="validationCountry" aria-describedby="validationCountryFeedback" required>
+            <input type="text" name="country" class="form-control is-invalid" id="validationCountry" aria-describedby="validationCountryFeedback" required>
             <div id="validationCountryFeedback" class="invalid-feedback" style="color: aliceblue;">
               Please provide a valid Country.
             </div>
         </div>
         <div class="col-md-6">
             <label for="validationNumber" class="form-label">Cell Number</label>
-            <input type="text" class="form-control is-invalid" id="validationNumber" placeholder="(+92)" aria-describedby="validationNumberFeedback" required>
+            <input type="text" name="cell" class="form-control is-invalid" id="validationNumber" placeholder="(+92)" aria-describedby="validationNumberFeedback" required>
             <div id="validationNumberFeedback" class="invalid-feedback" style="color: aliceblue;">
                 Please provide a valid Cell Number.
               </div>
         </div>
         <div class="col-md-6">
             <label for="validationDate" class="form-label">Date of Birth</label>
-            <input type="date" class="form-control is-invalid" value="02/16/13" data-date-format="mm/dd/yy" id="validationDate" aria-describedby="validationDateFeedback" required>
+            <input type="date" name="dob" class="form-control is-invalid" value="02/16/13" data-date-format="mm/dd/yy" id="validationDate" aria-describedby="validationDateFeedback" required>
             <div id="validationDateFeedback" class="invalid-feedback" style="color: aliceblue;">
                 Please provide a valid Date of Birth.
               </div>
         </div>
         <div class="col-md-6">
           <label for="validationGender" class="form-label">Gender</label>
-          <select id="validationGender" class="form-select form-control is-invalid" aria-describedby="validationGenderFeedback" required>
+          <select id="validationGender" name="gender" class="form-select form-control is-invalid" aria-describedby="validationGenderFeedback" required>
             <option selected>Male</option>
             <option>Female</option>
             <option>Others</option>
@@ -108,7 +109,7 @@
         </div>
         <div class="col-md-6">
             <label for="validationPassword" class="form-label">Password</label>
-            <input type="password" class="form-control is-invalid" id="validationPassword" placeholder="Enter Password" aria-describedby="validationPasswordFeedback" required>
+            <input type="password" name="password" class="form-control is-invalid" id="validationPassword" placeholder="Enter Password" aria-describedby="validationPasswordFeedback" required>
             <div id="validationPasswordFeedback" class="invalid-feedback" style="color: aliceblue;">
                 Please provide a valid Password.
               </div>
@@ -128,6 +129,7 @@
           <button type="submit" class="btn btn-dark btn-lg">Sign Up</button>
         </div>
       </form>
+  
     </div>
 
     <!-- Footer -->
