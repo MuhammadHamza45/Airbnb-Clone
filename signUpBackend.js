@@ -18,7 +18,6 @@ conn.connect(function(err) {
   console.log('Database is connected successfully !');
 });
 
-
 app.get('/signup',(req,res)=>{    
     res.sendFile(__dirname+"/signup.html");
 });
