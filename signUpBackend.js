@@ -1,5 +1,6 @@
 const express=require('express');
 var mysql = require('mysql');
+const Joi =require("@hapi/joi");
 const bodyParser= require('body-parser');
 const bcrypt=require('bcrypt');
 const app=express();
@@ -21,18 +22,51 @@ conn.connect(function(err) {
 app.get('/signup',(req,res)=>{    
     res.sendFile(__dirname+"/signup.html");
 });
+
 app.post('/signup',async(req,res)=>{
-  var name = req.body.name;
-    var email=req.body.email;
-    var country = req.body.country;
-    var cell = req.body.cell;
-    var gender = req.body.gender;
-    var dob = req.body.dob;
-    var password = req.body.password;
-    const salt = await bcrypt.genSalt(6);
-    const hashed = await bcrypt.hash(password,salt);
-    conn.query( `INSERT INTO signup(name,email,country,cell,gender,dob,password) VALUES ("${name}","${email}","${country}","${cell}","${gender}","${dob}","${hashed}")`);
-  res.send(req.body);    
+  const signupValidate=data=>{          
+    const schema=Joi.object({             
+      email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),             
+      password:Joi.string().required()         
+    }).unknown();         
+    return schema.validate(data);     
+  }     
+  const {error}=signupValidate(req.body);     
+  if(error){         
+    throw err;      
+  }     
+  else{    
+    // res.status(200).json('data saved.'); 
+    try{   
+      var name = req.body.name;
+      var email=req.body.email;
+      var country = req.body.country;
+      var cell = req.body.cell;
+      var gender = req.body.gender;
+      var dob = req.body.dob;
+      var password = req.body.password;
+      console.log(name);
+      const salt = await bcrypt.genSalt(6);
+      const hashed = await bcrypt.hash(password,salt);
+      conn.query( `INSERT INTO signup(name,email,country,cell,gender,dob,password) VALUES ("${name}","${email}","${country}","${cell}","${gender}","${dob}","${hashed}")`);
+    res.send(req.body);  
+    } 
+    catch{
+      res.send("database error");
+    }  
+  }
+  
+  // var name = req.body.name;
+  //   var email=req.body.email;
+  //   var country = req.body.country;
+  //   var cell = req.body.cell;
+  //   var gender = req.body.gender;
+  //   var dob = req.body.dob;
+  //   var password = req.body.password;
+  //   const salt = await bcrypt.genSalt(6);
+  //   const hashed = await bcrypt.hash(password,salt);
+  //   conn.query( `INSERT INTO signup(name,email,country,cell,gender,dob,password) VALUES ("${name}","${email}","${country}","${cell}","${gender}","${dob}","${hashed}")`);
+  // res.send(req.body);    
   
     
 });
