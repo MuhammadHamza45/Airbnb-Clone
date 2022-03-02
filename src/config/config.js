@@ -12,6 +12,10 @@ const config={
         password:process.env.PASSWORD,
         database:process.env.DATABASE,
         dbport:process.env.DBPORT
+    },
+    jwt:{
+        JWT_SECRET:process.env.JWT_SECRET,
+        JWT_ACCESS_EXPIRATION_MINUTES:process.env.JWT_ACCESS_EXPIRATION_MINUTES
     }
 } 
 module.exports=config;

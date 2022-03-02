@@ -1,7 +1,8 @@
 const dotenv=require('dotenv');
+
 // const express=require('express');
 const Sequelize=require('sequelize');
-const mysql=require('mysql');
+// const mysql=require('mysql');
 const config = require('./config/config');
 const db = new Sequelize(config.db.database, config.db.user, '', {
     host: 'localhost',

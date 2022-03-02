@@ -1,5 +1,10 @@
 //import express module
 const express = require('express');
+//import models
+// const sequelize=require('sequelize');
+// const db=require('./index');
+// const User=require('./models/user.model');
+// const GetUser=require('./models/location.model');
 
 //import cors
 const cors = require('cors');
@@ -12,7 +17,6 @@ dotenv.config();
 
 // import config.js file
 const config = require('./config/config');
-
 
 ///users route file
 const userRoute = require('./routes/user.route');

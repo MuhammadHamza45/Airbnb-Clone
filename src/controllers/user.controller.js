@@ -1,6 +1,5 @@
 
 const userService  = require('../services/user.service');
-
 const createUser = async (req, res) => {
   // console.log(req.body);
     await userService
@@ -23,7 +22,7 @@ const signinUser=(async(req,res)=>{
   });
 
 const getUsers = (async(req, res) => {
-    await userService.getService(req.body)
+    await userService.getUsers(req.body)
     
      .then((data)=>{
         res.send(data);
@@ -35,22 +34,22 @@ const getUsers = (async(req, res) => {
     
 });
 
-const getUser= ((req, res) => {
-    console.log("Get user from userController");
-    res.send("Get user controller");
-});
+// const getUser= ((req, res) => {
+//     console.log("Get user from userController");
+//     res.send("Get user controller");
+// });
 
-const updateUser = ((req, res, next) => {
-    console.log("updateUser from userController");
-    res.send("updateuser from usercontroller");
-});
+// const updateUser = ((req, res, next) => {
+//     console.log("updateUser from userController");
+//     res.send("updateuser from usercontroller");
+// });
 
 
 module.exports = {
     getUsers,
     createUser,
-    signinUser,
-    getUser,
-    updateUser
+    signinUser
+    // getUser,
+    // updateUser
 };
 

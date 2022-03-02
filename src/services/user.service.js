@@ -1,10 +1,13 @@
 const express=require('express');
 const userModel=require('../models/user.model');
+const userModel1=require('../models/location.model');
 const userAuth=require('../validations/userAuth');
 // const {schema}=require('../validations/validateUser');
 const Validate=require('../validations/validateUser');
 const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
+const config=require('../config/config');
+
 
 const createUser = async (userBody) => {
 
@@ -29,9 +32,11 @@ const createUser = async (userBody) => {
             if(!user){
                 const hash= await userAuth.hashIt(password);
                 const user = await userModel.User.create({name:name,email:email,country:country,cell:cell,dob:dob,gender:gender,password:hash});
-                // const token= await 
-                // console.log(user);
-                return user;
+                const payload={email:user.email,name:user.name};
+                // const key= require('crypto').randomBytes(64).toString('hex');
+                const accessToken=jwt.sign(payload,config.jwt.JWT_SECRET,{expiresIn:config.jwt.JWT_ACCESS_EXPIRATION_MINUTES});
+                // console.log(key);
+                return ({user,...{accessToken}});
             }else{
                 console.log('user is already exist');
                 return 404;
@@ -41,27 +46,6 @@ const createUser = async (userBody) => {
         return user;
     }
 };
-
-// const createUser=async(userbody)=>{
-//     await Validate.signupValidate(userbody);
-//     var name=userbody.name;
-//     var country=userbody.country;
-//     var cell=userbody.cell;
-//     var dob=userbody.dob;
-//     var gender=userbody.gender;
-//     let email=userbody.email;
-//     let password=userbody.password;
-//     const hash= await userAuth.hashIt(password);
-//     return new Promise(async(resolve,reject)=>{
-//         await userModel.createUser(name,email,country,cell,dob,gender,hash)
-//         .then((data)=>{
-//             resolve(data);
-//         }).catch((err)=>{
-//             reject(err);
-//         });
-//     });
-
-// }
 
 const signinUser = async (userBody) => {
 
@@ -83,8 +67,11 @@ const signinUser = async (userBody) => {
             const validatePassword=await userAuth.compareHash(password,user.password);
             if(validatePassword)
             {
+                const payload={email:user.email};
+                // const key= require('crypto').randomBytes(64).toString('hex');
+                const accessToken=jwt.sign(payload,config.jwt.JWT_SECRET,{expiresIn:config.jwt.JWT_ACCESS_EXPIRATION_MINUTES});
                 console.log("Successfully login");
-                return user;
+                return ({user,...{accessToken}});
             }
             else{
                 return ("invalid username or password");
@@ -98,9 +85,15 @@ const signinUser = async (userBody) => {
     }
     
 };
+const getUsers=async (userBody)=>{
+    const user=await userModel1.GetUser.findAll(userBody);
+    console.log(user);
+    return user;
+}
 
 
 
 module.exports={createUser,
-    signinUser
+    signinUser,
+    getUsers
 };

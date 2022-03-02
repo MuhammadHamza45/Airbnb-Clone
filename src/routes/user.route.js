@@ -14,7 +14,8 @@ router
     .post(userController.signinUser);
 router
     .route('/:userId')
-    .get(userController.getUser)
-    .patch(userController.updateUser);
+    .get(userController.getUsers)
+    // .patch(userController.updateUser);
+    
 
 module.exports = router;
