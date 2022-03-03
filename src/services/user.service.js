@@ -17,18 +17,18 @@ const createUser = async (userBody) => {
         throw error;
     }
     else{
-        let name=userBody.name;
+            let name=userBody.name;
             let country=userBody.country;
             let cell=userBody.cell;
             let dob=userBody.dob;
             let gender=userBody.gender;
-        const email=userBody.email;
-        const password=userBody.password;
-        const user=await userModel.User.findOne({
+            const email=userBody.email;
+            const password=userBody.password;
+            const user=await userModel.User.findOne({
             where:{
                 email: userBody.email
             }
-        }).then(async(user)=>{
+            }).then(async(user)=>{
             if(!user){
                 const hash= await userAuth.hashIt(password);
                 const user = await userModel.User.create({name:name,email:email,country:country,cell:cell,dob:dob,gender:gender,password:hash});
@@ -37,7 +37,8 @@ const createUser = async (userBody) => {
                 const accessToken=jwt.sign(payload,config.jwt.JWT_SECRET,{expiresIn:config.jwt.JWT_ACCESS_EXPIRATION_MINUTES});
                 // console.log(key);
                 return ({user,...{accessToken}});
-            }else{
+            }
+            else{
                 console.log('user is already exist');
                 return 404;
             }
@@ -56,8 +57,6 @@ const signinUser = async (userBody) => {
     else{
         //business rules/logic go here. 
     const password=userBody.password;
-
-    
     const user = await userModel.User.findOne({
         where: {
             email: userBody.email
@@ -86,14 +85,21 @@ const signinUser = async (userBody) => {
     
 };
 const getUsers=async (userBody)=>{
-    const user=await userModel1.GetUser.findAll(userBody);
+    const user = await userModel1.GetUser.findAll(
+        {
+            where:{id:1},
+            include:[{model:userModel.User}]
+        }
+        
+    );
     console.log(user);
     return user;
 }
 
 
 
-module.exports={createUser,
+module.exports={
+    createUser,
     signinUser,
     getUsers
 };

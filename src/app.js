@@ -1,10 +1,12 @@
 //import express module
 const express = require('express');
 //import models
-// const sequelize=require('sequelize');
-// const db=require('./index');
-// const User=require('./models/user.model');
-// const GetUser=require('./models/location.model');
+const Sequelize=require('sequelize');
+const sequelize=require('./index');
+const User=require('./models/user.model');
+const GetUser=require('./models/location.model');
+User.User.hasMany(GetUser.GetUser,{foreignKey:'user_id'});
+GetUser.GetUser.belongsTo(User.User,{foreignKey:'user_id'});
 
 //import cors
 const cors = require('cors');
