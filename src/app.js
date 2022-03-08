@@ -45,4 +45,4 @@ app.get('/', (req, res) => {
 app.use("/users", userRoute);
 
 //Server listening on port 3000
-app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
+app.listen(config.app.port, () => console.log(`Listening on port ${config.app.port}`));
