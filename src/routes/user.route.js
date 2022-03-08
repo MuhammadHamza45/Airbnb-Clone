@@ -13,9 +13,12 @@ router
     // .get(userController.getUsers)
     .post(userController.signinUser);
 router
-    .route('/:userId')
-    .get(userController.getUsers)
+    .route('/homes')
+    .get(userController.getUsers);
     // .patch(userController.updateUser);
+// router
+//     .route('/location_image')
+//     .get(userController.findUser1)
     
 
 module.exports = router;

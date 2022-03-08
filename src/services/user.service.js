@@ -1,6 +1,7 @@
 const express=require('express');
 const userModel=require('../models/user.model');
 const userModel1=require('../models/location.model');
+const userModel2=require('../models/location_img.model');
 const userAuth=require('../validations/userAuth');
 // const {schema}=require('../validations/validateUser');
 const Validate=require('../validations/validateUser');
@@ -85,10 +86,10 @@ const signinUser = async (userBody) => {
     
 };
 const getUsers=async (userBody)=>{
-    const user = await userModel1.GetUser.findAll(
+    const user = await userModel2.GetImage.findAll(
         {
-            where:{id:1},
-            include:[{model:userModel.User}]
+            // where:{id:userBody[0].id},
+            // include:[{model:userModel.User}]
         }
         
     );

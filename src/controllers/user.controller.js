@@ -34,7 +34,7 @@ const getUsers = (async(req, res) => {
     
 });
 
-// const getUser= ((req, res) => {
+// const findUser1= ((req, res) => {
 //     console.log("Get user from userController");
 //     res.send("Get user controller");
 // });
@@ -48,8 +48,8 @@ const getUsers = (async(req, res) => {
 module.exports = {
     getUsers,
     createUser,
-    signinUser
-    // getUser,
+    signinUser,
+    // findUser1
     // updateUser
 };
 
