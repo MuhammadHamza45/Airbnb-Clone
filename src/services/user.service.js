@@ -32,10 +32,13 @@ const createUser = async (userBody) => {
             }).then(async(user)=>{
             if(!user){
                 const hash= await userAuth.hashIt(password);
-                const user = await userModel.User.create({name:name,email:email,country:country,cell:cell,dob:dob,gender:gender,password:hash});
-                const payload={email:user.email,name:user.name};
+                const payload={email:email,name:name};
+                console.log(payload);
                 // const key= require('crypto').randomBytes(64).toString('hex');
                 const accessToken=jwt.sign(payload,config.jwt.JWT_SECRET,{expiresIn:config.jwt.JWT_ACCESS_EXPIRATION_MINUTES});
+                // console.log(accessToken);
+                const user = await userModel.User.create({name:name,email:email,country:country,cell:cell,dob:dob,gender:gender,password:hash});
+               
                 // console.log(key);
                 return ({user,...{accessToken}});
             }
@@ -68,8 +71,11 @@ const signinUser = async (userBody) => {
             if(validatePassword)
             {
                 const payload={email:user.email};
+                console.log(payload);
                 // const key= require('crypto').randomBytes(64).toString('hex');
+                // console.log(key);
                 const accessToken=jwt.sign(payload,config.jwt.JWT_SECRET,{expiresIn:config.jwt.JWT_ACCESS_EXPIRATION_MINUTES});
+                console.log(accessToken);
                 console.log("Successfully login");
                 return ({user,...{accessToken}});
             }

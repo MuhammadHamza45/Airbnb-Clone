@@ -22,7 +22,11 @@ const User = sequelize.db.define('registration_table', {
     },
     password: {
         type: Sequelize.STRING
-    }
+     }
+    // accessToken:{
+    //   type:Sequelize.STRING,
+    //   default:null
+    // }
     
 });
 
