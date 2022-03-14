@@ -22,7 +22,7 @@
     <div class="container w-50 mb-5">
         <div class="container reg m-3 p-5  border d-flex justify-content-center">
 
-            <form class="m-5" action="" id="user-form" method="post">
+            <form class="m-5" action="http://localhost:3000/users/signin" id="user-form" method="post">
                 <form class="m-5" action="" method="post">
                     <div class="container mb-5">
                         <p class="h4 d-flex justify-content-center">Sign in</p>
@@ -47,33 +47,7 @@
                 </form>
         </div>
     </div>
-    <script>
-        const userform = document.getElementsById("user-form");
-        userform.addEventListener("submit", e =>{
-        
-            //prevents form from being submitted
-            e.preventDefault();
-            console.log("Prevented");
-            
-    
-            const url = userform.action;
-            var formData = new FormData(userform);
-            
-            //We want to send the request body as JSON, so we're converting it to a plain object and then send as a JSON string.
-            const plainFormData = Object.fromEntries(formData.entries());
-            //fetch data		
-            fetch('http://localhost:3000/signin', {
-            //method: "POST",
-            body: JSON.stringify(plainFormData),
-            headers: {
-               "Content-Type": "application/json"
-              }}).
-            then(res => {
-            console.log(`Status Code:  ${res.status}`);
-            })
-            .catch(err => console.log(err));;
-                });
-        </script>
+    <script src="../airbnb.js/login.js"></script>
     
 </body>
 

@@ -14,7 +14,7 @@ function authenticateToken(req, res, next) {
     } 
   
     jwt.verify(token,config.jwt.JWT_SECRET, (err, user ) => {
-      console.log("i am at token "+ err);
+      // console.log("i am at token "+ err);
       if(err){
         return res.sendStatus(403);
       }

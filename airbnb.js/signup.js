@@ -15,6 +15,9 @@ userForm.addEventListener("submit",e=>{
     ).
     then(res=>{
         console.log(`Status Code: ${res.status}`);
+        if(res.status===200){
+            window.location.assign('http://127.0.0.1:5500/Airbnb-Clone/airbnb.html/signin.html');
+        }
     })
     .catch(err=>{
         console.log(err);

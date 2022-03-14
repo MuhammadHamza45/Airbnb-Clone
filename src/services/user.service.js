@@ -32,15 +32,16 @@ const createUser = async (userBody) => {
             }).then(async(user)=>{
             if(!user){
                 const hash= await userAuth.hashIt(password);
-                const payload={email:email,name:name};
-                console.log(payload);
-                // const key= require('crypto').randomBytes(64).toString('hex');
-                const accessToken=jwt.sign(payload,config.jwt.JWT_SECRET,{expiresIn:config.jwt.JWT_ACCESS_EXPIRATION_MINUTES});
+                // const payload={email:email,name:name};
+                // console.log(payload);
+                // // const key= require('crypto').randomBytes(64).toString('hex');
+                // const accessToken=jwt.sign(payload,config.jwt.JWT_SECRET,{expiresIn:config.jwt.JWT_ACCESS_EXPIRATION_MINUTES});
                 // console.log(accessToken);
                 const user = await userModel.User.create({name:name,email:email,country:country,cell:cell,dob:dob,gender:gender,password:hash});
                
                 // console.log(key);
-                return ({user,...{accessToken}});
+                // return ({user,...{accessToken}});
+                return user;
             }
             else{
                 console.log('user is already exist');
@@ -76,8 +77,10 @@ const signinUser = async (userBody) => {
                 // console.log(key);
                 const accessToken=jwt.sign(payload,config.jwt.JWT_SECRET,{expiresIn:config.jwt.JWT_ACCESS_EXPIRATION_MINUTES});
                 console.log(accessToken);
+                //send as cookie
+                const cookie= cookie('jwt',accessToken,{httpOnly:true,maxAge:config.jwt.JWT_ACCESS_EXPIRATION_MINUTES});
                 console.log("Successfully login");
-                return ({user,...{accessToken}});
+                return ({user,...{cookie}});
             }
             else{
                 return ("invalid username or password");

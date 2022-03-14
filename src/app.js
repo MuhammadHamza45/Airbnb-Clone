@@ -23,6 +23,7 @@ const config = require('./config/config');
 ///users route file
 const userRoute = require('./routes/user.route');
 
+
 //creates an object of type express. This represents our application.
 const app = express();
 
@@ -34,6 +35,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // enable cors
 app.use(cors());
+
+//cookie parser request body
+// app.use(cookieParser());
 
 app.get('/', (req, res) => {
     console.log("Get from root");
