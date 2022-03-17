@@ -1,6 +1,6 @@
 const express=require('express');
 const userController = require('../controllers/user.controller');
-const autherUser=require('../middleware/auth');
+const auth=require('../middleware/auth');
 const router=express.Router();
 
 
@@ -15,7 +15,7 @@ router
     .post(userController.signinUser);
 router
     .route('/homes')
-    .get(autherUser.authenticateToken,userController.getUsers);
+    .get(auth.authenticateToken,userController.getUsers);
     // .patch(userController.updateUser);
 // router
 //     .route('/location_image')

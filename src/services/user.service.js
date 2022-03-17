@@ -76,11 +76,10 @@ const signinUser = async (userBody) => {
                 // const key= require('crypto').randomBytes(64).toString('hex');
                 // console.log(key);
                 const accessToken=jwt.sign(payload,config.jwt.JWT_SECRET,{expiresIn:config.jwt.JWT_ACCESS_EXPIRATION_MINUTES});
-                console.log(accessToken);
-                //send as cookie
-                const cookie= cookie('jwt',accessToken,{httpOnly:true,maxAge:config.jwt.JWT_ACCESS_EXPIRATION_MINUTES});
-                console.log("Successfully login");
-                return ({user,...{cookie}});
+                // console.log(accessToken);
+                
+                console.log("Successfully login"+accessToken);
+                return ({user,...{accessToken}});
             }
             else{
                 return ("invalid username or password");

@@ -4,6 +4,7 @@ const express = require('express');
 const Sequelize=require('sequelize');
 const sequelize=require('./index');
 const User=require('./models/user.model');
+const cookieParser=require('cookie-parser');
 const GetUser=require('./models/location.model');
 User.User.hasMany(GetUser.GetUser,{foreignKey:'user_id'});
 GetUser.GetUser.belongsTo(User.User,{foreignKey:'user_id'});
@@ -37,7 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 //cookie parser request body
-// app.use(cookieParser());
+app.use(cookieParser());
 
 app.get('/', (req, res) => {
     console.log("Get from root");

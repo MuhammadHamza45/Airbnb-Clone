@@ -1,5 +1,6 @@
 
 const userService  = require('../services/user.service');
+// const {accessToken}=require('../')
 const createUser = async (req, res) => {
   // console.log(req.body);
     await userService
@@ -17,8 +18,17 @@ const signinUser=(async(req,res)=>{
   const user = await userService.signinUser(req.body);
     if (!user) {
         res.status(404).send("Not Found");
-    }
-    res.status(200).send(user);
+    } const tokenAge= 60*60;
+    console.log(user.accessToken);
+    res.cookie('jwt',user.accessToken,{
+      httpOnly:true, maxAge:tokenAge
+    });
+    res.status(200).json({
+      status:true,
+      data:{
+        email:user.email
+      }
+    });
   });
 
 const getUsers = (async(req, res) => {
